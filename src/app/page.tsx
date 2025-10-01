@@ -1,34 +1,35 @@
-// =============================
-// Neurasynk — Next.js Componentized Landing (App Router + Tailwind)
-// ES6+ modules, all components prefixed with `Neurasynk`.
-// Copy each block into its file path.
-// Palette: #142850, #27496D, #0C7B93, #00A8CC, #C1DADF
-// =============================
-
 // ---------------------------------
-// FILE: /app/page.tsx (MAIN)
+// FILE: /app/page.tsx (MAIN PAGE)
 // ---------------------------------
 import React from "react";
-import NeurasynkCTA from "@/components/NeurasynkCTA";
-import NeurasynkHero from "@/components/NeurasynkHero";
-import NeurasynkNavbar from "@/components/NeurasynkNavbar";
-import NeurasynkFooter from "@/components/NeurasynkFooter";
-import NeurasynkPrograms from "@/components/NeurasynkPrograms";
-import NeurasynkProjects from "@/components/NeurasynkProjects";
-import NeurasynkResearchMethod from "@/components/NeurasynkResearchMethod";
-import NeurasynkPublications from "@/components/NeurasynkPublications";
 
-export default function NeurasynkApp() {
+export default function Page() {
   return (
-    <main className="min-h-screen bg-white text-[#142850]">
-      <NeurasynkNavbar />
-      <NeurasynkHero />
-      <NeurasynkPrograms />
-      <NeurasynkProjects />
-      <NeurasynkResearchMethod />
-      <NeurasynkPublications />
-      <NeurasynkCTA />
-      <NeurasynkFooter />
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#F7FBFD] text-center px-6">
+      <h1 className="text-4xl md:text-6xl font-extrabold text-[#142850]">
+        Neurasynk
+      </h1>
+      <p className="mt-4 text-lg text-[#27496D] max-w-2xl">
+        Welcome to the Neurasynk development build. This site is under active
+        construction 🚧.
+      </p>
+      <p className="mt-2 text-md text-[#0C7B93]">
+        Synchronizing Brain and AI for adaptive, personalized neurofeedback.
+      </p>
+      <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <a
+          href="#programs"
+          className="px-6 py-3 rounded-xl bg-[#00A8CC] text-white font-semibold hover:opacity-90"
+        >
+          Explore Programs
+        </a>
+        <a
+          href="mailto:hello@neurasynk.com"
+          className="px-6 py-3 rounded-xl bg-white border border-[#C1DADF] text-[#142850] font-semibold hover:bg-[#C1DADF]"
+        >
+          Contact Us
+        </a>
+      </div>
     </main>
   );
 }
