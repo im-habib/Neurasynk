@@ -17,13 +17,12 @@ export default function Page() {
 
       {/* Mission Clarification */}
       <p className="mt-2 text-md text-[#0C7B93] max-w-3xl">
-        We are developing the next generation of{" "}
-        <b>real-time closed-loop neurofeedback systems</b>, powered by{" "}
-        <b>Deep Reinforcement Learning</b>, <b>EEG</b>, and{" "}
-        <b>Brain Network Modeling</b>. Our mission is to pioneer adaptive
-        technologies that support cognitive enhancement, improve mental health,
-        and advance neurorehabilitation through intelligent brain–AI
-        interaction.
+        We are building <b>next-generation closed-loop neurofeedback systems</b>{" "}
+        using
+        <b> Deep Reinforcement Learning</b>, <b>EEG</b>, and{" "}
+        <b>Brain Network Modeling</b>. Our mission is to create adaptive
+        technologies that <b>enhance cognition</b>,<b> support mental health</b>
+        , and <b>drive neurorehabilitation</b>.
       </p>
 
       {/* Development Status */}
