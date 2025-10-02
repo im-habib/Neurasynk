@@ -10,24 +10,30 @@ export default function Page() {
         Neurasynk
       </h1>
 
+      {/* Vision Message */}
       <p className="mt-4 text-lg text-[#27496D] max-w-2xl">
         Synchronizing Brain and AI for Adaptive, Personalized Neurofeedback.
       </p>
 
+      {/* Mission Clarification */}
       <p className="mt-2 text-md text-[#0C7B93] max-w-3xl">
-        We are building the next generation of{" "}
-        <b>real-time closed-loop neurofeedback systems</b>, integrating{" "}
+        We are developing the next generation of{" "}
+        <b>real-time closed-loop neurofeedback systems</b>, powered by{" "}
         <b>Deep Reinforcement Learning</b>, <b>EEG</b>, and{" "}
-        <b>Brain Network Modeling</b>. Our mission is to enable personalized
-        cognitive enhancement, mental health support, and neurorehabilitation
-        through intelligent brain–AI interaction.
+        <b>Brain Network Modeling</b>. Our mission is to pioneer adaptive
+        technologies that support cognitive enhancement, improve mental health,
+        and advance neurorehabilitation through intelligent brain–AI
+        interaction.
       </p>
 
+      {/* Development Status */}
       <p className="mt-6 text-md text-[#27496D] italic">
-        🚧 This site is under active development. We are preparing to launch
-        soon — stay tuned. 🚀
+        🚧 This site is under active development. We are coming soon with more
+        research updates, projects, and collaboration opportunities. Stay tuned.
+        🚀
       </p>
 
+      {/* CTA Buttons */}
       <div className="mt-8 flex flex-col sm:flex-row gap-4">
         {/* <a
           href="#programs"
