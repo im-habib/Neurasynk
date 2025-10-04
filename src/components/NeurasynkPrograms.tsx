@@ -1,10 +1,11 @@
 // ---------------------------------
 // FILE: /components/NeurasynkPrograms.tsx
 // ---------------------------------
-import React from "react";
+"use client";
+
 import { NEURASYNK_PILLARS } from "@/data/neurasynk.content";
 
-export default function NeurasynkPrograms() {
+const NeurasynkPrograms = () => {
   return (
     <section id="programs" className="py-16 bg-white text-[#142850]">
       <div className="mx-auto max-w-7xl px-6">
@@ -33,4 +34,6 @@ export default function NeurasynkPrograms() {
       </div>
     </section>
   );
-}
+};
+
+export default NeurasynkPrograms;

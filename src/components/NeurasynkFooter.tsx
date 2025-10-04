@@ -1,9 +1,22 @@
 // ---------------------------------
 // FILE: /components/NeurasynkFooter.tsx
 // ---------------------------------
-import React from "react";
+"use client";
 
-export default function NeurasynkFooter() {
+const FOOTER_LINKS = [
+  { href: "#projects", label: "Projects" },
+  { href: "#research", label: "Research" },
+  { href: "#publications", label: "Publications" },
+];
+
+const CONTACT_LINKS = [
+  { href: "mailto:hello@neurasynk.com", label: "Email" },
+  { href: "https://www.linkedin.com/company/neurasynk", label: "LinkedIn" },
+  { href: "https://github.com/neurasynk", label: "GitHub" },
+  { href: "https://twitter.com/neurasynk", label: "Twitter" },
+];
+
+const NeurasynkFooter = () => {
   return (
     <footer className="bg-[#142850] text-white">
       <div className="mx-auto max-w-7xl px-6 py-10 grid md:grid-cols-3 gap-8">
@@ -19,37 +32,32 @@ export default function NeurasynkFooter() {
         <div>
           <h4 className="font-semibold">Explore</h4>
           <ul className="mt-2 space-y-1 text-sm text-white/80">
-            <li>
-              <a href="#programs" className="hover:text-white">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="hover:text-white">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#research" className="hover:text-white">
-                Research
-              </a>
-            </li>
-            <li>
-              <a href="#publications" className="hover:text-white">
-                Publications
-              </a>
-            </li>
+            {FOOTER_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <a href={href} className="hover:text-white">
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <h4 className="font-semibold">Contact</h4>
           <ul className="mt-2 space-y-1 text-sm text-white/80">
-            <li>hello@neurasynk.com</li>
-            <li>LinkedIn · GitHub · Twitter</li>
+            <li>
+              {CONTACT_LINKS.map(({ href, label }) => (
+                <a href={href} className="hover:text-white" target="_blank">
+                  {label}
+                  {". "}
+                </a>
+              ))}
+            </li>
             <li>© {new Date().getFullYear()} Neurasynk</li>
           </ul>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default NeurasynkFooter;

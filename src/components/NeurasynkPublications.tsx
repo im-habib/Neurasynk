@@ -1,9 +1,9 @@
 // ---------------------------------
 // FILE: /components/NeurasynkPublications.tsx
 // ---------------------------------
-import React from "react";
+"use client";
 
-export default function NeurasynkPublications() {
+const NeurasynkPublications = () => {
   return (
     <section id="publications" className="py-16 bg-[#F7FBFD] text-[#142850]">
       <div className="mx-auto max-w-7xl px-6">
@@ -37,4 +37,6 @@ export default function NeurasynkPublications() {
       </div>
     </section>
   );
-}
+};
+
+export default NeurasynkPublications;

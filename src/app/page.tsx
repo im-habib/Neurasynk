@@ -8,7 +8,6 @@
 // ---------------------------------
 // FILE: /app/page.tsx (MAIN)
 // ---------------------------------
-import React from "react";
 import NeurasynkCTA from "@/components/NeurasynkCTA";
 import NeurasynkHero from "@/components/NeurasynkHero";
 import NeurasynkNavbar from "@/components/NeurasynkNavbar";
@@ -18,7 +17,7 @@ import NeurasynkProjects from "@/components/NeurasynkProjects";
 import NeurasynkResearchMethod from "@/components/NeurasynkResearchMethod";
 import NeurasynkPublications from "@/components/NeurasynkPublications";
 
-export default function NeurasynkApp() {
+const NeurasynkApp = () => {
   return (
     <main className="min-h-screen bg-white text-[#142850]">
       <NeurasynkNavbar />
@@ -31,4 +30,6 @@ export default function NeurasynkApp() {
       <NeurasynkFooter />
     </main>
   );
-}
+};
+
+export default NeurasynkApp;

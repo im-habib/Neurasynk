@@ -1,9 +1,9 @@
 // ---------------------------------
 // FILE: /components/NeurasynkHero.tsx
 // ---------------------------------
-import React from "react";
+"use client";
 
-export default function NeurasynkHero() {
+const NeurasynkHero = () => {
   return (
     <section className="bg-gradient-to-br from-[#142850] via-[#27496D] to-[#00A8CC] text-white">
       <div className="mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
@@ -62,4 +62,6 @@ export default function NeurasynkHero() {
       </div>
     </section>
   );
-}
+};
+
+export default NeurasynkHero;

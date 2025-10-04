@@ -1,9 +1,9 @@
 // ---------------------------------
 // FILE: /components/NeurasynkCTA.tsx
 // ---------------------------------
-import React from "react";
+"use client";
 
-export default function NeurasynkCTA() {
+const NeurasynkCTA = () => {
   return (
     <section
       id="contact"
@@ -34,4 +34,6 @@ export default function NeurasynkCTA() {
       </div>
     </section>
   );
-}
+};
+
+export default NeurasynkCTA;

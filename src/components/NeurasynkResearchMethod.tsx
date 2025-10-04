@@ -1,9 +1,9 @@
 // ---------------------------------
 // FILE: /components/NeurasynkResearchMethod.tsx
 // ---------------------------------
-import React from "react";
+"use client";
 
-export default function NeurasynkResearchMethod() {
+const NeurasynkResearchMethod = () => {
   return (
     <section id="research" className="py-16 bg-white text-[#142850]">
       <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10 items-start">
@@ -62,4 +62,6 @@ export default function NeurasynkResearchMethod() {
       </div>
     </section>
   );
-}
+};
+
+export default NeurasynkResearchMethod;
