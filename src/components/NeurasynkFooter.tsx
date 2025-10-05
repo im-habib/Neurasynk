@@ -3,6 +3,8 @@
 // ---------------------------------
 "use client";
 
+import Link from "next/link";
+
 const FOOTER_LINKS = [
   { href: "#projects", label: "Projects" },
   { href: "#research", label: "Research" },
@@ -22,8 +24,18 @@ const NeurasynkFooter = () => {
       <div className="mx-auto max-w-7xl px-6 py-10 grid md:grid-cols-3 gap-8">
         <div>
           <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-full bg-gradient-to-br from-[#00A8CC] to-[#0C7B93]" />
-            <span className="font-semibold">Neurasynk</span>
+            <div className="flex items-center gap-2">
+              <Link href="/" as="/">
+                <div className="h-8 w-8 rounded bg-gradient-to-br from-[#00A8CC] to-[#0C7B93] flex items-center justify-center text-white text-2xl font-bold">
+                  nS
+                </div>
+              </Link>
+              <Link href="/" as="/">
+                <span className="font-bold tracking-wide text-white">
+                  Neurasynk
+                </span>
+              </Link>
+            </div>
           </div>
           <p className="mt-3 text-sm text-white/80">
             Synchronizing Brain and AI.
@@ -46,7 +58,12 @@ const NeurasynkFooter = () => {
           <ul className="mt-2 space-y-1 text-sm text-white/80">
             <li>
               {CONTACT_LINKS.map(({ href, label }) => (
-                <a href={href} className="hover:text-white" target="_blank">
+                <a
+                  href={href}
+                  key={href}
+                  className="hover:text-white"
+                  target="_blank"
+                >
                   {label}
                   {". "}
                 </a>
