@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
+
 import "./globals.css";
+
 import NeurasynkHashRouter from "@/components/NeurasynkHashRouter";
 
 const geistSans = Roboto({
@@ -15,6 +17,7 @@ const geistMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Neurasynk — Synchronizing Brain and AI",
+  metadataBase: new URL("https://www.neurasynk.com"),
   description:
     "We are building next-generation closed-loop neurofeedback systems using Deep Reinforcement Learning, EEG, and Brain Network Modeling. Our mission is to create adaptive technologies that enhance cognition, support mental health, and drive neurorehabilitation.",
 };

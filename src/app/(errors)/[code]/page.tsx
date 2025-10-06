@@ -1,12 +1,13 @@
+// /app/(errors)/[code]/page.tsx
+
 import type { Metadata } from "next";
 import NeurasynkError from "@/components/NeurasynkError";
 import { NEURASYNK_ERRORS } from "@/lib/neurasynk-error-map";
 
 export function generateStaticParams() {
-  // These routes are statically generated so they’re always available
-  return ["400", "401", "403", "404", "500", "502", "503", "504", "505"].map(
-    (code) => ({ code })
-  );
+  return ["400", "401", "403", "502", "503", "504", "505"].map((code) => ({
+    code,
+  }));
 }
 
 export async function generateMetadata({
@@ -18,7 +19,7 @@ export async function generateMetadata({
   return {
     title: `${info.code} ${info.label} — Neurasynk`,
     description: info.detail,
-    robots: { index: false }, // usually keep error pages out of search
+    robots: { index: false },
   };
 }
 

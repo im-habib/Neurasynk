@@ -3,6 +3,8 @@
 // ---------------------------------
 "use client";
 
+import Link from "next/link";
+
 const NeurasynkCTA = () => {
   return (
     <section
@@ -18,18 +20,20 @@ const NeurasynkCTA = () => {
           studies, algorithm development, and product pilots.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
+          {/* console.log("params: ", params); */}
+          <Link
             href="mailto:hello@neurasynk.com"
             className="px-6 py-3 rounded-2xl bg-white text-[#142850] font-semibold hover:bg-[#C1DADF]"
           >
             hello@neurasynk.com
-          </a>
-          <a
+          </Link>
+          <a href="mailto:hello@neurasynk.com"></a>
+          <Link
             href="/brief"
             className="px-6 py-3 rounded-2xl bg-[#142850] text-white font-semibold hover:opacity-90"
           >
             Send Project Brief
-          </a>
+          </Link>
         </div>
       </div>
     </section>

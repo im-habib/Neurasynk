@@ -13,6 +13,8 @@ type OGImageParams = {
 };
 
 const OGImage = async ({ params }: OGImageParams) => {
+  console.log("params: ", params);
+
   const title = "Neurasynk — Synchronizing Brain and AI";
   const subtitle =
     "Adaptive EEG Neurofeedback with Deep Reinforcement Learning";

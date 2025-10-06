@@ -1,8 +1,9 @@
 // /components/NeurasynkHashRouter.tsx
+
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const SECTION_IDS = new Set([
   "programs",
@@ -12,41 +13,45 @@ const SECTION_IDS = new Set([
   "contact",
 ]);
 
-function handleHash(router: ReturnType<typeof useRouter>) {
-  const raw = (typeof window !== "undefined" ? window.location.hash : "") || "";
-  const hash = raw.replace(/^#/, ""); // drop the '#'
+function run(router: ReturnType<typeof useRouter>, pathname: string) {
+  const raw = typeof window !== "undefined" ? window.location.hash : "";
+  const hash = (raw || "").replace(/^#/, "");
 
   // pattern: projects/<slug>
-  const projectMatch = hash.match(/^projects\/([^/]+)$/);
-  if (projectMatch) {
-    const slug = decodeURIComponent(projectMatch[1]);
-    router.replace(`/projects/${slug}`); // will 404 if slug doesn't exist
+  const m = hash.match(/^projects\/([^/]+)$/);
+  if (m) {
+    const slug = decodeURIComponent(m[1]);
+    // if we aren't already at that route, navigate
+    if (!(pathname === `/projects/${slug}`))
+      router.replace(`/projects/${slug}`);
     return;
   }
 
-  // pattern: known section id (e.g., "projects")
+  // pattern: known section id (e.g., "#projects")
   if (SECTION_IDS.has(hash)) {
-    const el = document.getElementById(hash);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // wait a tick for layout to paint, then scroll
+    requestAnimationFrame(() => {
+      document
+        .getElementById(hash)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
     return;
   }
 
-  // Unknown fragment: no-op (or strip it)
+  // else: no-op (or strip the fragment if you want)
   // window.history.replaceState({}, "", window.location.pathname);
 }
 
 export default function NeurasynkHashRouter() {
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    // run on mount
-    handleHash(router);
-
-    // run on hash changes
-    const onHash = () => handleHash(router);
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
-  }, [router]);
+    const handler = () => run(router, pathname);
+    handler(); // on mount
+    window.addEventListener("hashchange", handler);
+    return () => window.removeEventListener("hashchange", handler);
+  }, [router, pathname]);
 
   return null;
 }

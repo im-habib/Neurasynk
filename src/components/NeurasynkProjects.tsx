@@ -3,8 +3,9 @@
 // ---------------------------------
 "use client";
 
-import { NEURASYNK_PROJECTS } from "@/data/neurasynk.content";
+import Link from "next/link";
 import NeurasynkTag from "./NeurasynkTag";
+import { NEURASYNK_PROJECTS } from "@/data/neurasynk.content";
 
 const NeurasynkProjects = () => {
   return (
@@ -17,12 +18,12 @@ const NeurasynkProjects = () => {
               Operational tracks derived from our research roadmap.
             </p>
           </div>
-          <a
+          <Link
             href="/projects"
             className="text-[#0C7B93] font-medium hover:underline"
           >
             View all →
-          </a>
+          </Link>
         </div>
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {NEURASYNK_PROJECTS.map((proj) => (
@@ -51,12 +52,12 @@ const NeurasynkProjects = () => {
                 ))}
               </div>
               {proj.link && (
-                <a
+                <Link
                   href={proj.link}
                   className="mt-4 inline-block text-[#0C7B93] font-medium hover:underline"
                 >
                   Learn more →
-                </a>
+                </Link>
               )}
             </article>
           ))}
