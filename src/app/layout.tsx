@@ -15,6 +15,9 @@ const geistMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
+// export const runtime = "nodejs";
+// export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Neurasynk — Synchronizing Brain and AI",
   metadataBase: new URL("https://www.neurasynk.com"),
