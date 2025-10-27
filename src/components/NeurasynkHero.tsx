@@ -4,6 +4,8 @@
 // ---------------------------------
 "use client";
 
+import Image from "next/image";
+
 export default function NeurasynkHero() {
   return (
     <section className="relative isolate overflow-hidden py-20 md:py-28">
@@ -53,10 +55,11 @@ export default function NeurasynkHero() {
 
         {/* Right side: specification card */}
         <div
-          className="rounded-3xl border border-white/10 bg-surface p-6 
-                     backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
+          className="rounded-xl bg-surface/70 p-3 border border-accent/30
+                     backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
         >
-          <ul className="space-y-3">
+          <Image height={400} width={600} src="/hero.png" alt="" className="rounded" />
+          {/* <ul className="space-y-3">
             {[
               "Latency budget ≤ 150 ms from window end to feedback onset.",
               "Network-aware targets: PLV / wPLI / coherence → graph metrics.",
@@ -68,7 +71,7 @@ export default function NeurasynkHero() {
                 <span className="text-fg-muted">{item}</span>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </section>
