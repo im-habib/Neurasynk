@@ -13,6 +13,7 @@ import { Providers } from "@/store/providers";
 import NeurasynkHashRouter from "@/components/NeurasynkHashRouter";
 import { generateMetadata, viewportConfig } from "@/lib/seo-config";
 import Background from "@/components/Background";
+import useThemeCSS from "@/hooks/useThemeCSS";
 
 const geistSans = Roboto({
   variable: "--font-roboto-sans",
@@ -34,32 +35,34 @@ const geistMono = Roboto_Mono({
 //     "We are building next-generation closed-loop neurofeedback systems using Deep Reinforcement Learning, EEG, and Brain Network Modeling. Our mission is to create adaptive technologies that enhance cognition, support mental health, and drive neurorehabilitation.",
 // };
 
+// function ThemeRuntime() {
+//   useThemeCSS();
+//   return null;
+// }
+
 export const metadata: Metadata = generateMetadata();
 export const viewport: Viewport = viewportConfig;
 
 export default async function NeurasynkLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // export default async function RootLayout({ children }: Props) {
+  const locale = await getLocale();
+  if (!routing.locales.includes(locale as any)) notFound();
 
+  let messages: Record<string, string>;
+  try {
+    messages = (await import(`@/messages/${locale}.json`)).default;
+  } catch {
+    notFound();
+  }
 
-  // export default async function RootLayout({ children }: Props) { 
-    const locale = await getLocale();
-    if (!routing.locales.includes(locale as any)) notFound();
-
-    let messages: Record<string, string>;
-    try {
-      messages = (await import(`@/messages/${locale}.json`)).default;
-    } catch {
-      notFound();
-    }
-
-    setRequestLocale(locale);
-
+  setRequestLocale(locale);
 
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-dvh antialiased`}
+        className={`min-h-dvh text-fg transition-colors duration-300 ${geistSans.variable} ${geistMono.variable}`}
       >
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
@@ -68,17 +71,23 @@ export default async function NeurasynkLayout({
                 attribute="class"
                 enableSystem={false}
                 defaultTheme="light"
-                themes={["light", "dark", "darkgray", "offwhite", "turquoise", "aliceblue"]}
-                value={{
-                  dark: "dark",
-                  light: "light",
-                  offwhite: "offwhite",
-                  darkgray: "darkgray",
-                  turquoise: "turquoise",
-                  aliceblue: "aliceblue",
-                }}
+                themes={[
+                  "light",
+                  "dark",
+                  "darkgray",
+                  "offwhite",
+                  "turquoise",
+                  "aliceblue",
+                ]}
+                // value={{
+                //   dark: "dark",
+                //   light: "light",
+                //   offwhite: "offwhite",
+                //   darkgray: "darkgray",
+                //   turquoise: "turquoise",
+                //   aliceblue: "aliceblue",
+                // }}
               >
-
                 {/* Global utilities */}
                 <Background />
                 <NeurasynkHashRouter />
@@ -95,4 +104,4 @@ export default async function NeurasynkLayout({
       </body>
     </html>
   );
-};
+}

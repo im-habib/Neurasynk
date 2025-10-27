@@ -1,0 +1,21 @@
+/* Tailwind theme tokens — still define color names globally */
+
+@theme {
+  --color-fg: #0b1f2a;
+  --color-fg-muted: #224457cc;
+  --color-accent: #00a8cc;
+  --color-accent-contrast: #ffffff;
+  --color-surface: rgb(255 255 255 / 0.6);
+  --color-surface-hover: rgb(255 255 255 / 0.72);
+  --color-hero-tint: rgb(0 168 204 / 0.1);
+}
+
+* {
+  transition: color 0.25s, background-color 0.25s, border-color 0.25s,
+    fill 0.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

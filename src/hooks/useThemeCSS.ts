@@ -1,0 +1,81 @@
+"use client";
+
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
+
+const themeVars: Record<string, Record<string, string>> = {
+  light: {
+    "--color-fg": "#0b1f2a",
+    "--color-fg-muted": "#224457cc",
+    "--color-accent": "#00a8cc",
+    "--color-accent-contrast": "#ffffff",
+    "--color-surface": "rgb(255 255 255 / 0.60)",
+    "--color-surface-hover": "rgb(255 255 255 / 0.72)",
+    "--color-hero-tint": "rgb(0 168 204 / 0.10)",
+  },
+  dark: {
+    "--color-fg": "#e6f1f4",
+    "--color-fg-muted": "#c7d4dbcc",
+    "--color-accent": "#22d3ee",
+    "--color-accent-contrast": "#00232b",
+    "--color-surface": "rgb(18 28 40 / 0.55)",
+    "--color-surface-hover": "rgb(18 28 40 / 0.68)",
+    "--color-hero-tint": "rgb(34 211 238 / 0.10)",
+  },
+  darkgray: {
+    "--color-fg": "#eef2f5",
+    "--color-fg-muted": "#d8dde3cc",
+    "--color-accent": "#9aa4b2",
+    "--color-accent-contrast": "#14161a",
+    "--color-surface": "rgb(22 24 28 / 0.55)",
+    "--color-surface-hover": "rgb(22 24 28 / 0.68)",
+    "--color-hero-tint": "rgb(154 164 178 / 0.10)",
+  },
+  offwhite: {
+    "--color-fg": "#2a2a27",
+    "--color-fg-muted": "#4a4a44cc",
+    "--color-accent": "#6b8e8b",
+    "--color-accent-contrast": "#ffffff",
+    "--color-surface": "rgb(255 255 255 / 0.65)",
+    "--color-surface-hover": "rgb(255 255 255 / 0.78)",
+    "--color-hero-tint": "rgb(235 228 214 / 0.28)",
+  },
+  turquoise: {
+    "--color-fg": "#072e33",
+    "--color-fg-muted": "#0b4a50cc",
+    "--color-accent": "#00d1c7",
+    "--color-accent-contrast": "#022222",
+    "--color-surface": "rgb(255 255 255 / 0.58)",
+    "--color-surface-hover": "rgb(255 255 255 / 0.72)",
+    "--color-hero-tint": "rgb(0 209 199 / 0.15)",
+  },
+  aliceblue: {
+    "--color-fg": "#0d2535",
+    "--color-fg-muted": "#274b5fcc",
+    "--color-accent": "#3da9f7",
+    "--color-accent-contrast": "#ffffff",
+    "--color-surface": "rgb(255 255 255 / 0.40)",
+    "--color-surface-hover": "rgb(255 255 255 / 0.55)",
+    "--color-hero-tint": "rgb(190 230 255 / 0.25)",
+  },
+};
+
+export default function useThemeCSS() {
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    if (!theme) return;
+    const root = document.documentElement;
+
+    // clear old vars first
+    Object.keys(themeVars.light).forEach((key) => {
+      root.style.removeProperty(key);
+    });
+
+    // apply new vars
+    const vars = themeVars[theme] ?? themeVars.light;
+    Object.entries(vars).forEach(([key, val]) => {
+      root.style.setProperty(key, val);
+    });
+  }, [theme]);
+}

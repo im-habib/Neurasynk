@@ -19,7 +19,7 @@ import NeurasynkPublications from "@/components/NeurasynkPublications";
 
 const NeurasynkApp = () => {
   return (
-    <main className="min-h-screen bg-white text-[#142850]">
+    <main className="min-h-scree text-[#00A8CC]">
       <NeurasynkNavbar />
       <NeurasynkHero />
       <NeurasynkPrograms />
