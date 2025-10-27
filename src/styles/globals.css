@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Roboto, sans-serif;
 }
+
+@layer utilities {
+  .bg-neurasynk {
+    background-image: url('/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

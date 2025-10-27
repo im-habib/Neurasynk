@@ -4,6 +4,7 @@
 "use client";
 
 import Link from "next/link";
+import ThemeChanger from "./ThemeChanger";
 
 const NAV_LINKS = [
   { href: "#programs", label: "Programs" },
@@ -38,6 +39,8 @@ const NeurasynkNavbar = () => {
             </li>
           ))}
         </ul>
+
+        <ThemeChanger />
         <a
           href="#contact"
           className="hidden md:inline-block px-4 py-2 rounded-xl bg-[#00A8CC] text-white font-medium hover:opacity-90"
