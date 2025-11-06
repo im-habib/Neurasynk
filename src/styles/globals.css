@@ -7,3 +7,9 @@ body,
   transition: color 0.35s ease, background-color 0.35s ease,
     border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
 }
+
+@layer utilities {
+  .min-h-dvh {
+    min-height: 100dvh;
+  }
+}

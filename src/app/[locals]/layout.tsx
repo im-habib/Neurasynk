@@ -13,7 +13,6 @@ import { Providers } from "@/store/providers";
 import NeurasynkHashRouter from "@/components/NeurasynkHashRouter";
 import { generateMetadata, viewportConfig } from "@/lib/seo-config";
 import Background from "@/components/Background";
-import useThemeCSS from "@/hooks/useThemeCSS";
 
 const geistSans = Roboto({
   variable: "--font-roboto-sans",
@@ -60,7 +59,7 @@ export default async function NeurasynkLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`min-h-dvh text-fg transition-colors duration-300 ${geistSans.variable} ${geistMono.variable}`}
       >

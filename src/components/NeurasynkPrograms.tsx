@@ -7,7 +7,7 @@ import { NEURASYNK_PILLARS } from "@/data/neurasynk.content";
 
 const NeurasynkPrograms = () => {
   return (
-    <section id="programs" className="py-16 bg-[#00A8CC] text-[#142850]">
+    <section id="programs" className="py-16 text-[#00A8CC]">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="text-2xl md:text-3xl font-bold">Research Programs</h2>
         <p className="mt-2 text-[#27496D]">
@@ -17,7 +17,7 @@ const NeurasynkPrograms = () => {
           {NEURASYNK_PILLARS.map((p) => (
             <div
               key={p.title}
-              className="rounded-2xl border border-[#C1DADF] p-5 hover:shadow-md"
+              className="bg-[linear-gradient(120deg,var(--color-hero-tint)_0%,transparent_55%)] rounded-xl border border-[#C1DADF] p-5 hover:shadow-md"
             >
               <h3 className="font-semibold text-[#0C7B93]">{p.title}</h3>
               <ul className="mt-3 space-y-2 text-sm">

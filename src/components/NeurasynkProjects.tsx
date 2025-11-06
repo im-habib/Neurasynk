@@ -9,7 +9,11 @@ import { NEURASYNK_PROJECTS } from "@/data/neurasynk.content";
 
 const NeurasynkProjects = () => {
   return (
-    <section id="projects" className="py-16 bg-[#F7FBFD]">
+    <section id="projects" className="py-16">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,var(--color-hero-tint)_0%,transparent_55%)]" />
+      {/* subtle vignette for readability */}
+      {/* <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_20%_0%,transparent,rgba(0,0,0,0.14))] [@media(prefers-color-scheme:light)]:bg-[radial-gradient(1200px_600px_at_20%_0%,transparent,rgba(255,255,255,0.06))]" /> */}
+
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between gap-4 text-[#142850]">
           <div>
