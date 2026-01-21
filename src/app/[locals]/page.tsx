@@ -8,21 +8,33 @@
 // ---------------------------------
 // FILE: /app/page.tsx (MAIN)
 // ---------------------------------
+import NeurasynkFAQ from "@/components/NeurasynkFAQ";
 import NeurasynkCTA from "@/components/NeurasynkCTA";
 import NeurasynkHero from "@/components/NeurasynkHero";
+import NeurasynkPlans from "@/components/NeurasynkPlans";
+import NeurasynkAbout from "@/components/NeurasynkAbout";
 import NeurasynkNavbar from "@/components/NeurasynkNavbar";
 import NeurasynkFooter from "@/components/NeurasynkFooter";
-import NeurasynkPrograms from "@/components/NeurasynkPrograms";
+import NeurasynkProcess from "@/components/NeurasynkProcess";
 import NeurasynkProjects from "@/components/NeurasynkProjects";
-import NeurasynkResearchMethod from "@/components/NeurasynkResearchMethod";
+import NeurasynkPrograms from "@/components/NeurasynkPrograms";
+import NeurasynkBenefits from "@/components/NeurasynkBenefits";
 import NeurasynkPublications from "@/components/NeurasynkPublications";
+import NeurasynkTestimonials from "@/components/NeurasynkTestimonials";
+import NeurasynkResearchMethod from "@/components/NeurasynkResearchMethod";
 
 const NeurasynkApp = () => {
   return (
     <main className="min-h-scree text-[#00A8CC]">
       <NeurasynkNavbar />
       <NeurasynkHero />
+      <NeurasynkProcess />
       <NeurasynkPrograms />
+      <NeurasynkBenefits />
+      <NeurasynkPlans />
+      <NeurasynkAbout />
+      <NeurasynkTestimonials />
+      <NeurasynkFAQ />
       <NeurasynkProjects />
       <NeurasynkResearchMethod />
       <NeurasynkPublications />

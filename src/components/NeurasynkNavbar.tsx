@@ -1,54 +1,51 @@
-// ---------------------------------
-// FILE: /components/NeurasynkNavbar.tsx
-// ---------------------------------
 "use client";
 
 import Link from "next/link";
 import ThemeChanger from "./ThemeChanger";
 
 const NAV_LINKS = [
+  { href: "#process", label: "Process" },
   { href: "#programs", label: "Programs" },
+  // { href: "#benefits", label: "Benefits" },
+  // { href: "#plans", label: "Plans" },
+  { href: "#about", label: "About" },
+  // { href: "#testimonials", label: "Testimonials" },
   { href: "#projects", label: "Projects" },
-  { href: "#research", label: "Research" },
+  // { href: "#research", label: "Research" },
   { href: "#publications", label: "Publications" },
   { href: "#contact", label: "Contact" },
 ];
 
 const NeurasynkNavbar = () => {
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-[#C1DADF]">
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+    <div className="sticky top-4 z-50 flex justify-center">
+      <nav className="rounded-full shadow-[inset_-5px_-5px_5px_rgba(250,251,255,1),inset_5px_5px_5px_rgba(166,171,189,0.25)] px-6 py-2 flex items-center justify-between max-w-7xl w-full mx-4">
         <div className="flex items-center gap-2">
           <Link href="/" as="/">
-            <div className="h-8 w-8 rounded bg-gradient-to-br from-[#00A8CC] to-[#0C7B93] flex items-center justify-center text-white text-2xl font-bold">
-              nS
-            </div>
-          </Link>
-          <Link href="/" as="/">
-            <span className="font-bold tracking-wide text-[#142850]">
-              Neurasynk
+            <span
+              className="font-bold text-fg text-xl"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              Neuro<span className="text-accent">synk</span>
             </span>
           </Link>
         </div>
-        <ul className="hidden md:flex items-center gap-6 text-sm text-[#142850]">
+        <ul className="hidden md:flex items-center gap-4 text-sm">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
-              <a href={href} className="hover:text-[#0C7B93]">
-                {label}
-              </a>
+              <button className="px-4 py-2 rounded-full hover:bg-gray-200 transition">
+                <a href={href} className="text-fg hover:text-accent">
+                  {label}
+                </a>
+              </button>
             </li>
           ))}
         </ul>
-
-        <ThemeChanger />
-        <a
-          href="#contact"
-          className="hidden md:inline-block px-4 py-2 rounded-xl bg-[#00A8CC] text-white font-medium hover:opacity-90"
-        >
-          Collaborate
+        <a className="hidden md:inline-block px-4 py-2 rounded-full bg-accent text-white font-medium shadow-[0_-5px_10px_rgba(250,251,255,1),0_5px_10px_rgba(166,171,189,0.5)] hover:opacity-90">
+          <ThemeChanger />
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

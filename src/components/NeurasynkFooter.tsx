@@ -6,6 +6,13 @@
 import Link from "next/link";
 
 const FOOTER_LINKS = [
+  { href: "#process", label: "Process" },
+  { href: "#programs", label: "Programs" },
+  { href: "#benefits", label: "Benefits" },
+  { href: "#plans", label: "Plans" },
+  { href: "#about", label: "About" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#faq", label: "FAQ" },
   { href: "#projects", label: "Projects" },
   { href: "#research", label: "Research" },
   { href: "#publications", label: "Publications" },
@@ -21,7 +28,7 @@ const CONTACT_LINKS = [
 const NeurasynkFooter = () => {
   return (
     <footer className="bg-[#142850] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-10 grid md:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-7xl px-6 py-10 grid md:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
@@ -69,8 +76,22 @@ const NeurasynkFooter = () => {
                 </a>
               ))}
             </li>
-            <li>© {new Date().getFullYear()} Neurasynk</li>
           </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold">Follow Us</h4>
+          <div className="mt-2 flex space-x-4">
+            <a href="https://www.linkedin.com/company/neurasynk" target="_blank" className="text-white/80 hover:text-white">
+              LinkedIn
+            </a>
+            <a href="https://github.com/neurasynk" target="_blank" className="text-white/80 hover:text-white">
+              GitHub
+            </a>
+            <a href="https://twitter.com/neurasynk" target="_blank" className="text-white/80 hover:text-white">
+              Twitter
+            </a>
+          </div>
+          <p className="mt-4 text-sm text-white/80">© {new Date().getFullYear()} Neurasynk</p>
         </div>
       </div>
     </footer>

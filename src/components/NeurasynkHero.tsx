@@ -1,75 +1,53 @@
-// ---------------------------------
-// FILE: /components/NeurasynkHero.tsx
-// Uses ViewportCard (auto-toggle: border/shadow/blur/background)
-// ---------------------------------
 "use client";
 
-import Image from "next/image";
-import ViewportCard from "@/hoc/ViewportCard";
+import Button from "./Button";
 
 export default function NeurasynkHero() {
   return (
-    <ViewportCard
-      // Background layer (theme tint)
-      // paddingClassName="px-6 md:px-10"
-      containerClassName="flex items-center"
-      center={true}
-    >
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-10 md:grid-cols-2">
-        {/* Left: text + CTAs */}
-        <div>
-          <span className="inline-block rounded-full border border-accent/30 bg-surface px-3 py-1 text-xs font-medium text-accent">
-            Neuroadaptive · EEG · DRL
-          </span>
-
-          <h1 className="mt-4 text-fg text-3xl md:text-5xl font-extrabold leading-tight">
-            Brain–AI systems for adaptive, personalized neurofeedback
-          </h1>
-
-          <p className="mt-4 text-fg-muted md:text-lg">
-            Real-time closed-loop EEG + Deep Reinforcement Learning to modulate
-            brain network dynamics for cognition and mental health.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold
-                         text-[--color-accent-contrast] bg-accent border border-surface
-                         hover:opacity-90 shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition"
-            >
-              Explore Projects
-            </a>
-
-            <a
-              href="#research"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold
-                         border border-accent bg-surface text-fg hover:bg-surface-hover
-                         backdrop-blur-xl transition"
-            >
-              See the Science
-            </a>
-          </div>
-        </div>
-
-        {/* Right: glass image card */}
-        <div
-          className="rounded-xl bg-surface/70 p-3
-                     border border-white/10
-                     backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+    <section className="py-20 bg-[#ecedf1] text-center">
+      <div className="mx-auto max-w-4xl px-6">
+        <h1
+          className="text-5xl md:text-7xl font-bold leading-tight text-fg"
+          style={{ fontFamily: "Poppins, sans-serif" }}
         >
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded">
-            <Image
-              src="/hero.png" // ensure this exists in /public
-              alt="Neurasynk neural illustration"
-              fill
-              sizes="(min-width: 768px) 560px, 100vw"
-              className="object-cover"
-              priority
-            />
+          Transform Your <span className="text-accent">Business</span> with
+          AI-Driven Automation
+        </h1>
+        <p className="mt-8 text-fg-muted text-xl max-w-2xl mx-auto">
+          Harness the power of artificial intelligence to automate your most
+          critical business processes, saving time and reducing costs.
+        </p>
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          {/* <a
+            href="#plans"
+            className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-white bg-accent shadow-[0_-5px_10px_rgba(250,251,255,1),0_5px_10px_rgba(166,171,189,0.5)] hover:opacity-90 transition"
+          ></a> */}
+
+          <Button text="See plans" hoverColor="#00a8cc" />
+        </div>
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="w-20 h-20 mx-auto rounded-full bg-white shadow-[inset_-5px_-5px_5px_rgba(250,251,255,1),inset_5px_5px_5px_rgba(166,171,189,0.25)] flex items-center justify-center mb-4">
+              <span className="text-2xl">🚀</span>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="w-20 h-20 mx-auto rounded-full bg-white shadow-[inset_-5px_-5px_5px_rgba(250,251,255,1),inset_5px_5px_5px_rgba(166,171,189,0.25)] flex items-center justify-center mb-4">
+              <span className="text-2xl">🤖</span>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="w-20 h-20 mx-auto rounded-full bg-white shadow-[inset_-5px_-5px_5px_rgba(250,251,255,1),inset_5px_5px_5px_rgba(166,171,189,0.25)] flex items-center justify-center mb-4">
+              <span className="text-2xl">⚡</span>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="w-20 h-20 mx-auto rounded-full bg-white shadow-[inset_-5px_-5px_5px_rgba(250,251,255,1),inset_5px_5px_5px_rgba(166,171,189,0.25)] flex items-center justify-center mb-4">
+              <span className="text-2xl">📊</span>
+            </div>
           </div>
         </div>
       </div>
-    </ViewportCard>
+    </section>
   );
 }

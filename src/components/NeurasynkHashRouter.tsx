@@ -48,7 +48,7 @@ export default function NeurasynkHashRouter() {
 
   useEffect(() => {
     const handler = () => run(router, pathname);
-    handler(); // on mount
+    handler();
     window.addEventListener("hashchange", handler);
     return () => window.removeEventListener("hashchange", handler);
   }, [router, pathname]);
